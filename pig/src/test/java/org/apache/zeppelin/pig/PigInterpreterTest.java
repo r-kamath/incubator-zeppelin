@@ -56,7 +56,7 @@ public class PigInterpreterTest {
     pig = new PigInterpreter(properties);
     pig.open();
 
-    context = new InterpreterContext(null, null, null, null, null, null, null, null);
+    context = new InterpreterContext(null, null, null, null, null, null, null, null, null);
   }
 
   @AfterClass
