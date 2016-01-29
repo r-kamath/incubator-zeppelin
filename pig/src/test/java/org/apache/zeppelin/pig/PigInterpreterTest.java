@@ -17,10 +17,8 @@
  */
 package org.apache.zeppelin.pig;
 
-import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 
-import java.util.Arrays;
 import java.util.Properties;
 import java.io.PrintWriter;
 import java.io.File;
@@ -33,7 +31,6 @@ import org.apache.commons.io.FileUtils;
 import static org.apache.zeppelin.pig.PigInterpreter.*;
 import org.apache.zeppelin.interpreter.InterpreterContext;
 import org.apache.zeppelin.interpreter.InterpreterResult;
-import org.apache.zeppelin.interpreter.InterpreterResult.Code;
 import static org.junit.Assert.*;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
@@ -43,8 +40,8 @@ public class PigInterpreterTest {
 
   private static PigInterpreter pig;
   private static InterpreterContext context;
-  private static final String PASSWD_FILE = "/tmp/tmp_zeppelin_dummypasswd";
-  private static final String USERS_FILE = "/tmp/tmp_zeppelin_dummyusers";
+  private static final String PASSWD_FILE = System.getProperty("java.io.tmpdir") + "/tmp_zeppelin_dummypasswd";
+  private static final String USERS_FILE = System.getProperty("java.io.tmpdir") + "/tmp_zeppelin_dummyusers";
 
   @BeforeClass
   public static void setUp() {
